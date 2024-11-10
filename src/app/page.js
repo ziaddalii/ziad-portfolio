@@ -7,7 +7,13 @@ import WorksSection from "@/components/sections/WorksSection";
 
 export const metadata = {
   title: "Ziad Ali",
-  description: "Ziad Ali Frontend developer portfolio",
+  description:
+    "Experienced frontend developer specializing in creating dynamic, user-centered web experiences. Passionate about React, digital solutions, and elevating customer engagement through optimized UI and seamless performance.",
+  openGraph: {
+    title: "Ziad Ali",
+    description:
+      "Experienced frontend developer specializing in creating dynamic, user-centered web experiences. Passionate about React, digital solutions, and elevating customer engagement through optimized UI and seamless performance.",
+  },
 };
 
 export default function Home() {
