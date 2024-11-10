@@ -120,8 +120,8 @@ const techs = [
 export default function ExperienceSection() {
   return (
     <>
-      <section className="grid md:grid-cols-5 grid-cols-1 gap-8 px-8 py-40 mt-20 h-screen">
-        <article className="md:col-span-2 px-8 z-10">
+      <section className="grid md:grid-cols-5 grid-cols-1 gap-8 px-8 py-40 mt-20">
+        <article className="md:col-span-2 md:px-8 z-10">
           <h2 className="lg:text-9xl sm:text-7xl text-5xl text-secondary font-mono">
             I AM HONORED TO WORK WITH
           </h2>
