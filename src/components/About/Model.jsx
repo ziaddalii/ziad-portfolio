@@ -122,7 +122,7 @@ export default function ThreeDModel() {
       </Canvas>
       <div className="absolute md:-bottom-12 lg:bottom-0 bottom-0 lg:left-12 left-0  p-4">
         <p className="sm:text-lg md:text-3xl uppercase text-sm">
-          I'm not this{" "}
+          I&apos;m not this{" "}
           <span className="relative">
             one{" "}
             <Image
