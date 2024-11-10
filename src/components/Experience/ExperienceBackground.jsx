@@ -1,26 +1,24 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import BG from "@/assets/images/bg.webp";
 
 function ExperienceBackground({ children }) {
-  const [opacity, setOpacity] = useState(1); // Set initial opacity to 1 (100%)
-  const backgroundRef = useRef(null); // Ref for the ExperienceBackground component
+  const [opacity, setOpacity] = useState(1);
+  const backgroundRef = useRef(null);
   const [maxScroll, setMaxScroll] = useState(0);
 
   useEffect(() => {
     const updateMaxScroll = () => {
       if (backgroundRef.current !== null) {
         const rect = backgroundRef.current.offsetTop;
-        setMaxScroll(rect); // Set maxScroll to the offset top position of the div
+        setMaxScroll(rect);
       }
     };
-  
-    updateMaxScroll(); // Run initially
-  
-    // Add resize event listener
+
+    updateMaxScroll();
+
     window.addEventListener("resize", updateMaxScroll);
-  
-    // Cleanup event listener on component unmount
+
     return () => window.removeEventListener("resize", updateMaxScroll);
   }, [backgroundRef.current]);
 
@@ -28,10 +26,9 @@ function ExperienceBackground({ children }) {
     const scrollY = window.scrollY + 300;
 
     if (scrollY > maxScroll) {
-      const newOpacity = Math.max(1 - (scrollY - maxScroll) / 800, 0.4); // Smoothly fades out
+      const newOpacity = Math.max(1 - (scrollY - maxScroll) / 800, 0.4);
       setOpacity(newOpacity);
     } else {
-      // Reset opacity to 1 when above maxScroll
       setOpacity(1);
     }
   };
@@ -42,30 +39,32 @@ function ExperienceBackground({ children }) {
   });
 
   return (
-    <div
-      ref={backgroundRef}
-      style={{
-        position: "relative",
-        height: "100%",
-        width: "100%",
-        background: `url(${BG.src}) no-repeat fixed center`,
-        backgroundSize: "cover",
-        backdropFilter: "brightness(0.5)",
-      }}
-    >
+    <Suspense fallback={<></>}>
       <div
+        ref={backgroundRef}
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
+          position: "relative",
           height: "100%",
-          backgroundColor: `rgba(0, 0, 0, ${opacity})`,
-          zIndex: 1,
+          width: "100%",
+          background: `url(${BG.src}) no-repeat fixed center`,
+          backgroundSize: "cover",
+          backdropFilter: "brightness(0.5)",
         }}
-      ></div>
-      {children}
-    </div>
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: `rgba(0, 0, 0, ${opacity})`,
+            zIndex: 1,
+          }}
+        ></div>
+        {children}
+      </div>
+    </Suspense>
   );
 }
 

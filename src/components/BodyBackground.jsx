@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
 function BodyBackground({ children }) {
   const [opacity, setOpacity] = useState(0.4);
@@ -23,12 +23,14 @@ function BodyBackground({ children }) {
   }, []);
 
   return (
-    <div
-      className="absolute top-0 left-0 w-full z-10 overflow-hidden"
-      style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})` }}
-    >
-      {children}
-    </div>
+    <Suspense fallback={<></>}>
+      <div
+        className="absolute top-0 left-0 w-full z-10 overflow-hidden"
+        style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})` }}
+      >
+        {children}
+      </div>
+    </Suspense>
   );
 }
 

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
 function NavbarBackground({ children }) {
   const [blur, setBlur] = useState(0);
@@ -30,12 +30,15 @@ function NavbarBackground({ children }) {
   }, []);
 
   return (
+    <Suspense fallback={<></>}>
+
     <header
       className="fixed top-0 px-8 w-full z-50"
       style={{ backdropFilter: `blur(${blur}px)`, backgroundColor: `rgba(19, 19, 19, ${opacity})` }}
     >
       {children}
     </header>
+    </Suspense>
   );
 }
 
