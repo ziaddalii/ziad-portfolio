@@ -22,7 +22,7 @@ function WorksSection() {
         <Trail className="space-y-20">
           <ProjectCard
             projectName={"Jobsolv"}
-            projectDesc={"E-commerce"}
+            projectDesc={"job hunting web application"}
             projectLink={"https://www.jobsolv.com/"}
             projectTechs={[
               { id: 1, name: "React JS" },
@@ -38,7 +38,7 @@ function WorksSection() {
           <ProjectCard
             classNames="flex-row-reverse lg:ms-40"
             projectName={"Proformance"}
-            projectDesc={"E-commerce"}
+            projectDesc={"Informative website"}
             projectLink={"https://proformance.vercel.app/"}
             projectTechs={[
               { id: 1, name: "Next JS" },
@@ -84,7 +84,7 @@ function WorksSection() {
           <ProjectCard
             classNames="lg:ms-12"
             projectName={"Eko"}
-            projectDesc={"E-commerce"}
+            projectDesc={"informative website"}
             projectLink={"https://ziaddalii.github.io/eko/"}
             projectTechs={[
               { id: 1, name: "React JS" },
