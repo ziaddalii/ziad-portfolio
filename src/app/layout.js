@@ -3,7 +3,7 @@ import { Six_Caps } from "next/font/google";
 import { Playfair_Display, Marcellus } from "next/font/google";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
-import BG from "@/assets/images/bg.jpg";
+import BG from "@/assets/images/bg.webp";
 import BodyBackground from "@/components/BodyBackground";
 
 const sixCaps = Six_Caps({
