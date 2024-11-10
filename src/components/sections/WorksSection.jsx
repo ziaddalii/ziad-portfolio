@@ -2,11 +2,11 @@ import Image from "next/image";
 import React from "react";
 import Star from "@/assets/images/star.png";
 import ProjectCard from "../cards/ProjectCard";
-import Zodiac from "@/assets/images/works/zodiac.png";
-import Eko from "@/assets/images/works/eko.png";
-import Proformance from "@/assets/images/works/proformance.png";
-import Resellcle from "@/assets/images/works/resellcle.png";
-import Jobsolv from "@/assets/images/works/jobsolv.png";
+import Zodiac from "@/assets/images/works/zodiac.webp";
+import Eko from "@/assets/images/works/eko.webp";
+import Proformance from "@/assets/images/works/proformance.webp";
+import Resellcle from "@/assets/images/works/resellcle.webp";
+import Jobsolv from "@/assets/images/works/jobsolv.webp";
 import { Trail } from "../animations/Trial";
 function WorksSection() {
   return (
