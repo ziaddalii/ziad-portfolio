@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import BG from "@/assets/images/bg.jpg";
+import BG from "@/assets/images/bg.webp";
 
 function ExperienceBackground({ children }) {
   const [opacity, setOpacity] = useState(1); // Set initial opacity to 1 (100%)
